@@ -60,6 +60,15 @@ class MyFrame(wx.Frame):
                 answer = next(res.results).text 
                 print(answer)
                 say("The answer is '" +answer+ "' ")
+                  except:
+                print ("Can't find the answer in wolframalpha, going to next")
+                   
+            try:
+                input = input.split(' ')            # ~ split input by spacing
+                input = " ".join(input[1:])         # ~ join it, except for the first  word
+                os.system(r'start '+'C:\\Users\\leno\\'+input)     # Opens any file/app  in specified folder (e.g start Desktop\discord) (spacing not supported yet)
+                print("Opening" +input)
+
                 
             except:
                 #wikipedia:
