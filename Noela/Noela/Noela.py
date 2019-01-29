@@ -48,6 +48,7 @@ class MyFrame(wx.Frame):
                 audio = r.listen(source)
             try:
                 self.txt.SetValue(r.recognize_google(audio))
+                id.send('\x0D')
             except sr.UnknownValueError:
                 print("Google Speech Recognition could not understand audio")
             except sr.RequestError as e:
